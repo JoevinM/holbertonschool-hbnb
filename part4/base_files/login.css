@@ -1,0 +1,125 @@
+/* ========== RESET GLOBAL ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== HEADER ========== */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #4fff4f;
+}
+
+header .logo {
+    height: 45px;
+}
+
+.login-button {
+    background-color: #ff4f4f;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #ff4f4f;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+    background-color: #111;
+    padding: 0.7rem 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+/* ========== MAIN CONTENT ========== */
+main {
+    flex: 1; /* push footer at side */
+    padding: 2rem;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* ========== LOGIN FORM (style identique aux review-card) ========== */
+#login-form {
+    background: #fff;
+    padding: 10px;          /* identique review */
+    margin: 20px 0;         /* identique review */
+    border-radius: 10px;    /* identique review */
+    border: 1px solid #ddd; /* identique review */
+}
+
+#login-form h2 {
+    margin-bottom: 10px;
+}
+
+#login-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+/* ========== BUTTON ========== */
+#login-form button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4fff4f;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #31d931;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #fff;
+    border-top: 4px solid #4fff4f;
+}

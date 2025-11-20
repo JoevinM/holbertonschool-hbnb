@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Review</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Place details</title>
+    <link rel="stylesheet" href="place.css">
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <img src="images/logo.png" alt="HBnB Logo" class="logo">
-        <a href="login.html" class="login-button">Login</a>
+      <img src="images/logo.png" alt="HBnB Logo" class="logo">
+      <a id="login-link" href="login.html" class="login-button">Login</a>
+      <a id="logout-link" href="#" class="logout-button" style="display:none;">Logout</a>
     </header>
 
     <!-- NAVIGATION -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
+        <a id="nav-login" href="login.html">Login</a>
     </nav>
-    
+
     <!-- MAIN CONTENT -->
     <main>
         <section id="place-details">

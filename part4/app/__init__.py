@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from flask_restx import Api
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
@@ -30,6 +31,7 @@ def create_app(config_class="config.DevelopmentConfig"):
     app.config.from_object(config_class)
     bcrypt.init_app(app)
     jwt.init_app(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
     # Initialize Flask-RESTX API with documentation
     api = Api(

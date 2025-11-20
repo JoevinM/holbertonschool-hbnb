@@ -114,6 +114,7 @@ class PlaceList(Resource):
             'title': place.title,
             'latitude': place.latitude,
             'longitude': place.longitude,
+            'price' : place.price
         } for place in places]
 
         return place_list, 200
