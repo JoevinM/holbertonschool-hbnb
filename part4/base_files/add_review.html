@@ -4,48 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Review</title>
+
     <link rel="stylesheet" href="add_review.css">
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
+
 <body>
 
     <!-- HEADER -->
     <header>
-      <img src="images/logo.png" alt="HBnB Logo" class="logo">
-      <a id="login-link" href="login.html" class="login-button">Login</a>
-      <a id="logout-link" href="#" class="logout-button" style="display:none;">Logout</a>
+        <img src="images/logo.png" alt="HBnB Logo" class="logo">
+
+        <a id="login-link" href="login.html" class="login-button">Login</a>
+        <a id="logout-link" href="#" class="logout-button" style="display:none;">Logout</a>
     </header>
 
     <!-- NAVIGATION -->
     <nav>
-      <a href="index.html">Home</a>
-      <a id="nav-login" href="login.html">Login</a>
+        <a href="index.html">Home</a>
+        <a id="nav-login" href="login.html">Login</a>
     </nav>
 
     <!-- MAIN CONTENT -->
     <main>
-        <!-- Add something to identify the place you're reviewing -->
         <form id="review-form">
             <h2>Add a Review</h2>
+
             <label for="review">Your Review:</label>
             <textarea id="review" name="review" required></textarea>
+
             <label for="rating">Rating:</label>
             <select id="rating" name="rating" required>
-              <option value="" disabled selected>Choose a rating</option>
-              <option value="1">1 ★</option>
-              <option value="2">2 ★★</option>
-              <option value="3">3 ★★★</option>
-              <option value="4">4 ★★★★</option>
-              <option value="5">5 ★★★★★</option>
+                <option value="" disabled selected>Choose a rating</option>
+                <option value="1">1 ★</option>
+                <option value="2">2 ★★</option>
+                <option value="3">3 ★★★</option>
+                <option value="4">4 ★★★★</option>
+                <option value="5">5 ★★★★★</option>
             </select>
+
             <button type="submit">Submit Review</button>
         </form>
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <p>All rights reserved.</p>
+        <p>All rights reserved.</p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>

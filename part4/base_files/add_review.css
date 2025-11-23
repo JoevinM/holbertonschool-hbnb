@@ -1,4 +1,6 @@
-/* ========== RESET GLOBAL ========== */
+/* =========================================
+   RESET GLOBAL
+========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,20 +8,30 @@
     font-family: "Arial", sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ========== HEADER ========== */
+/* =========================================
+   HEADER
+========================================= */
 header {
     background-color: #222;
     color: #fff;
     padding: 1rem 2rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     border-bottom: 4px solid #4fff4f;
 }
 
@@ -27,45 +39,45 @@ header .logo {
     height: 45px;
 }
 
-.login-button {
-    background-color: #ff4f4f;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
+.login-button,
 .logout-button {
     background-color: #ff4f4f;
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
     font-weight: bold;
 }
 
-/* ========== NAVIGATION ========== */
+/* =========================================
+   NAVIGATION
+========================================= */
 nav {
     background-color: #111;
     padding: 0.7rem 2rem;
+
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
 }
-/* ========== MAIN CONTENT ========== */
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
 main {
     padding: 2rem;
     max-width: 800px;
     margin: auto;
 }
 
-/* ========== ADD REVIEW FORM ========== */
+/* =========================================
+   ADD REVIEW FORM
+========================================= */
 #add-review {
     margin-top: 20px;
 }
@@ -85,15 +97,18 @@ main {
     width: 100%;
     min-height: 120px;
     margin-top: 10px;
-    resize: vertical;
+
     padding: 10px;
-    border-radius: 6px;
     border: 1px solid #aaa;
+    border-radius: 6px;
+
+    resize: vertical;
 }
 
 #review-form button {
     margin-top: 10px;
     padding: 8px 12px;
+
     background-color: #4fff4f;
     border: none;
     border-radius: 6px;
@@ -101,12 +116,16 @@ main {
     cursor: pointer;
 }
 
-/* ========== FOOTER ========== */
+/* =========================================
+   FOOTER
+========================================= */
 footer {
     text-align: center;
     padding: 1rem;
+
     background-color: #222;
     color: #fff;
+
     margin-top: 2rem;
     border-top: 4px solid #4fff4f;
 }

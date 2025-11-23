@@ -52,7 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-});
+
+  /* --- PLACE DETAILS PAGE DETECTION --- */
+  if (document.getElementById('place-details')) {
+    const placeId = getPlaceIdFromURL();
+    checkAuthenticationForPlace(placeId);
+  }
+
+}); // ← OK, un seul DOMContentLoaded !
 
 /* ---------------- LOGIN ---------------- */
 async function loginUser(email, password) {
@@ -87,7 +94,6 @@ function checkAuthentication() {
     headerLogin.style.display = 'none';
     navLogin.style.display = 'none';
     logoutLink.style.display = 'block';
-
     fetchPlaces(token);
   }
 }
@@ -140,7 +146,7 @@ function displayPlaces(places) {
         <p><strong>Price:</strong> ${place.price} €</p>
         <p><strong>Latitude:</strong> ${place.latitude}</p>
         <p><strong>Longitude:</strong> ${place.longitude}</p>
-        <a class="details-button" href="#">Details</a>
+        <a class="details-button" href="place.html?id=${place.id}">Details</a>
       </div>
     `;
 
@@ -152,4 +158,78 @@ function displayPlaces(places) {
 function logoutUser() {
   document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
   window.location.reload();
+}
+
+/* ---------------- PLACE DETAILS UTILS ---------------- */
+function getPlaceIdFromURL() {
+  return new URLSearchParams(window.location.search).get("id");
+}
+
+function checkAuthenticationForPlace(placeId) {
+  const token = getCookie('token');
+  const addReviewSection = document.getElementById('add-review');
+
+  if (!token) {
+    addReviewSection.style.display = 'none';
+    fetchPlaceDetails(null, placeId);
+  } else {
+    addReviewSection.style.display = 'block';
+    fetchPlaceDetails(token, placeId);
+  }
+}
+
+async function fetchPlaceDetails(token, placeId) {
+  const response = await fetch(`http://127.0.0.1:5000/api/v1/places/${placeId}`, {
+    method: 'GET',
+    headers: token ? { 'Authorization': 'Bearer ' + token } : {}
+  });
+
+  if (!response.ok) {
+    document.getElementById('place-details').innerHTML = "<p>Error loading details.</p>";
+    return;
+  }
+
+  const place = await response.json();
+  displayPlaceDetails(place);
+  displayReviews(place.reviews || []);
+}
+
+function displayPlaceDetails(place) {
+  const container = document.getElementById('place-details');
+  container.innerHTML = `
+    <img src="https://placehold.co/400x250?text=${encodeURIComponent(place.title)}" alt="Place image">
+    <h2>${place.title}</h2>
+    <p><strong>Description:</strong> ${place.description || "No description"}</p>
+    <p><strong>Price:</strong> ${place.price} €</p>
+    <p><strong>Latitude:</strong> ${place.latitude}</p>
+    <p><strong>Longitude:</strong> ${place.longitude}</p>
+
+    <h3>Amenities</h3>
+    <ul>
+      ${place.amenities && place.amenities.length > 0
+        ? place.amenities.map(a => `<li>${a.name}</li>`).join("")
+        : "<li>No amenities listed</li>"
+      }
+    </ul>
+  `;
+}
+
+function displayReviews(reviews) {
+  const container = document.getElementById('reviews');
+  container.innerHTML = "<h2>Reviews</h2>";
+
+  if (!reviews.length) {
+    container.innerHTML += "<p>No reviews yet.</p>";
+    return;
+  }
+
+  reviews.forEach(review => {
+    const div = document.createElement("div");
+    div.classList.add("review-card");
+    div.innerHTML = `
+      <p><strong>${review.user.first_name} ${review.user.last_name}</strong></p>
+      <p>${review.text}</p>
+    `;
+    container.appendChild(div);
+  });
 }

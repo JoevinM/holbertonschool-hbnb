@@ -1,4 +1,6 @@
-/* ========== RESET GLOBAL ========== */
+/* =========================================
+   RESET GLOBAL
+========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,14 +14,18 @@ body {
     line-height: 1.6;
 }
 
-/* ========== HEADER ========== */
+/* =========================================
+   HEADER
+========================================= */
 header {
     background-color: #222;
     color: #fff;
     padding: 1rem 2rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     border-bottom: 4px solid #4fff4f;
 }
 
@@ -27,15 +33,7 @@ header .logo {
     height: 45px;
 }
 
-.login-button {
-    background-color: #ff4f4f;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
+.login-button,
 .logout-button {
     background-color: #ff4f4f;
     padding: 0.5rem 1rem;
@@ -45,27 +43,36 @@ header .logo {
     font-weight: bold;
 }
 
-/* ========== NAVIGATION ========== */
+/* =========================================
+   NAVIGATION
+========================================= */
 nav {
     background-color: #111;
     padding: 0.7rem 2rem;
+
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
 }
-/* ========== MAIN CONTENT ========== */
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
 main {
     padding: 2rem;
     max-width: 900px;
     margin: auto;
 }
 
-/* ========== PLACE CARD (Index) ========== */
+/* =========================================
+   PLACE CARDS
+========================================= */
+
 #places-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -73,71 +80,73 @@ main {
     padding: 20px;
 }
 
-/* CARD */
 .place-card {
     background: #fff;
     border-radius: 14px;
-    padding: 0;
     overflow: hidden;
+
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover animation */
 .place-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 26px rgba(0,0,0,0.18);
 }
 
-/* Placeholder image */
 .place-card img {
     width: 100%;
     height: 160px;
     object-fit: cover;
 }
 
-/* Content inside card */
 .place-card-content {
     padding: 15px;
 }
 
-/* Title */
 .place-card h3 {
-    margin: 0 0 8px;
+    margin-bottom: 8px;
     font-size: 1.3rem;
     color: #222;
 }
 
-/* Text */
 .place-card p {
     margin: 5px 0;
     color: #555;
 }
 
-/* BUTTON */
+/* =========================================
+   DETAILS BUTTON
+========================================= */
 .details-button {
     display: inline-block;
     margin-top: 12px;
-    background: #4F8BFF;
-    color: #fff;
+
+    background: #4fff4f;
+    color: #000;
     font-weight: bold;
+
     padding: 8px 14px;
     border-radius: 8px;
     text-decoration: none;
+
     transition: background 0.2s ease;
 }
 
 .details-button:hover {
-    background: #346CFF;
+    background: #31d931;
 }
 
-
-/* ========== FOOTER ========== */
+/* =========================================
+   FOOTER
+========================================= */
 footer {
     text-align: center;
     padding: 1rem;
+
     background-color: #222;
     color: #fff;
+
     border-top: 4px solid #4fff4f;
     margin-top: 2rem;
 }

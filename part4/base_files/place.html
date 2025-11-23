@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place details</title>
+
     <link rel="stylesheet" href="place.css">
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
+
 <body>
 
     <!-- HEADER -->
     <header>
-      <img src="images/logo.png" alt="HBnB Logo" class="logo">
-      <a id="login-link" href="login.html" class="login-button">Login</a>
-      <a id="logout-link" href="#" class="logout-button" style="display:none;">Logout</a>
+        <img src="images/logo.png" alt="HBnB Logo" class="logo">
+        <a id="login-link" href="login.html" class="login-button">Login</a>
+        <a id="logout-link" href="#" class="logout-button" style="display:none;">Logout</a>
     </header>
 
     <!-- NAVIGATION -->
@@ -24,27 +26,36 @@
 
     <!-- MAIN CONTENT -->
     <main>
+
+        <!-- PLACE DETAILS -->
         <section id="place-details">
             <!-- Place details will be populated dynamically -->
         </section>
+
+        <!-- REVIEWS -->
         <section id="reviews">
             <!-- Reviews will be populated dynamically -->
         </section>
+
+        <!-- ADD REVIEW -->
         <section id="add-review">
             <h2>Add a Review</h2>
+
             <form id="review-form">
                 <label for="review-text">Review:</label>
                 <textarea id="review-text" name="review-text" required></textarea>
 
-                <button type="submit">Submit</button>
+                <button class="submit-button" type="submit">Submit</button>
             </form>
         </section>
+
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <p>All rights reserved.</p>
+        <p>All rights reserved.</p>
     </footer>
+
     <script src="scripts.js" defer></script>
 </body>
 </html>
